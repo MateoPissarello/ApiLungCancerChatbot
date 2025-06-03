@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers.router_chat import router as chat_router
+from routers.router_model import router as model_router
 
 app = FastAPI(
     title="Chatbot API",
@@ -16,6 +17,7 @@ app.add_middleware(
 
 
 app.include_router(chat_router)
+app.include_router(model_router)
 
 
 if __name__ == "__main__":
